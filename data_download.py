@@ -129,10 +129,11 @@ try:
             cleanup()
             run_cleaning_script(cleaning_script_path)
             run_model_training_script(model_training_script_path)
-            restart_fastapi_server()
             
         else:
             print(f"Only found {len(new_files)} new files, not enough to retrain the model.")
+        
+        restart_fastapi_server()
 except Exception as e:
     print(f"An error occurred: {e}")
 finally:
