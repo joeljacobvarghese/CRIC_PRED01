@@ -44,6 +44,9 @@ Future Goals for CRIC PRED Project:
 
 Contributions to the CRIC PRED project are welcome and appreciated. In addition to the current features, here are some future goals we aim to achieve:
 
+Model Optimization using Cross-Entropy Loss:
+        Implement cross-entropy loss evaluation for each model and select the best-performing models based on the evaluation results, enhancing prediction accuracy.
+
 Automated Model Updates:
         Automatically update the prediction model with new cricket game data to ensure predictions are always up-to-date.
 
