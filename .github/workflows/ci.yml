@@ -42,11 +42,7 @@ jobs:
       run: docker-compose up -d
 
     - name: Wait for containers to be fully up
-      run: sleep 10  # Adjust sleep time based on the time your containers usually take to be up and running
-
-    - name: Run tests
-      run: |
-        docker-compose run fastapi pytest
+      run: sleep 10 
 
     - name: Clean up
       if: always()

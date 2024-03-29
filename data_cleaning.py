@@ -4,13 +4,13 @@ import os
 import glob
 import pandas as pd
 
-# Base directory where your JSON files are located
+# Base directory 
 Base = os.getcwd()
 
-# Directory containing your JSON files
+# Directory containing JSON files
 DatasetDir = os.path.join(Base, 'ODI_DATASET')
 
-# Paths for your source JSON file and the target CSV file
+# Paths for source JSON file and the target CSV file
 ModifiedDatasetPath = os.path.join(Base, 'odi.csv')
 First_Innings_Path = os.path.join(Base, 'First_Innings.csv')
 Second_Innings_Path = os.path.join(Base, 'Second_Innings.csv')
@@ -49,11 +49,11 @@ def convert_innings_to_dataset(dataset_path, output_csv_path):
     
     write_header = not os.path.exists(output_csv_path) or os.path.getsize(output_csv_path) == 0
     
-    # Open the CSV file in append mode
+    
     with open(output_csv_path, 'a', newline='') as csv_file:
         writer = csv.writer(csv_file)
         
-        # Write the header if needed
+        
         if write_header:
             writer.writerow(["Runs", "Overs", "Wickets", "Chasing score", "Total"])
         
@@ -115,11 +115,11 @@ for file_name in glob.glob(os.path.join(DatasetDir, '*.json')):
 
 dataset = pd.read_csv(ModifiedDatasetPath)
 
-# Split the dataset into two separate datasets
+
 First_Innings = dataset[dataset['Chasing score'] == -1].drop(columns=['Chasing score'])
 Second_Innings = dataset[dataset['Chasing score'] != -1]
 
-# Save the datasets to CSV files
+
 First_Innings.to_csv(First_Innings_Path, index=False)
 Second_Innings.to_csv(Second_Innings_Path, index=False)
 
