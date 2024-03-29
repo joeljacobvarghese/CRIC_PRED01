@@ -16,7 +16,7 @@ To set up the CRIC PRED project on your local machine, follow these steps:
 1. **Clone the Repository**
 
 ```sh
-git clone https://github.com/joeljacobvarghese/CRIC_PRED.git
+git clone https://github.com/joeljacobvarghese/CRIC_PRED01
 cd CRIC_PRED
 ```
 
