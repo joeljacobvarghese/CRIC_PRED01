@@ -1,0 +1,17 @@
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+COPY data_download.py .
+COPY model_training.py .
+COPY api_server.py .
+COPY data_cleaning.py .
+
+RUN pip install --no-cache-dir -r requirements.txt
+RUN chmod +x /app/data_cleaning.py
+
+
+EXPOSE 8000
+
+CMD ["python", "data_download.py"]
